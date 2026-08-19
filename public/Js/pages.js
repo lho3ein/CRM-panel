@@ -17,14 +17,16 @@
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     const chart = document.getElementById("barChart");
     if (chart) observer.observe(chart);
 
     document.querySelectorAll("[data-filter]").forEach((chip) => {
       chip.addEventListener("click", () => {
-        document.querySelectorAll("[data-filter]").forEach((c) => c.classList.remove("is-active"));
+        document
+          .querySelectorAll("[data-filter]")
+          .forEach((c) => c.classList.remove("is-active"));
         chip.classList.add("is-active");
         bars.forEach((b) => b.classList.remove("is-in"));
         requestAnimationFrame(() => {
@@ -71,7 +73,9 @@
       });
       card.addEventListener("dragend", () => {
         card.classList.remove("is-dragging");
-        document.querySelectorAll(".kanban-col").forEach((c) => c.classList.remove("is-drop"));
+        document
+          .querySelectorAll(".kanban-col")
+          .forEach((c) => c.classList.remove("is-drop"));
         dragEl = null;
       });
     });
@@ -112,26 +116,32 @@
     });
 
     const modal = document.getElementById("projectModal");
-    document.getElementById("openProjectModal")?.addEventListener("click", () => {
-      modal?.classList.add("is-open");
-    });
-    document.getElementById("closeProjectModal")?.addEventListener("click", () => {
-      modal?.classList.remove("is-open");
-    });
+    document
+      .getElementById("openProjectModal")
+      ?.addEventListener("click", () => {
+        modal?.classList.add("is-open");
+      });
+    document
+      .getElementById("closeProjectModal")
+      ?.addEventListener("click", () => {
+        modal?.classList.remove("is-open");
+      });
     modal?.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("is-open");
     });
-    document.getElementById("createProjectForm")?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("newProjectName").value.trim();
-      if (!name) {
-        HarborToast("نام پروژه را وارد کنید");
-        return;
-      }
-      modal.classList.remove("is-open");
-      HarborToast(`پروژه «${name}» ساخته شد`);
-      e.target.reset();
-    });
+    document
+      .getElementById("createProjectForm")
+      ?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("newProjectName").value.trim();
+        if (!name) {
+          HarborToast("نام پروژه را وارد کنید");
+          return;
+        }
+        modal.classList.remove("is-open");
+        HarborToast(`پروژه «${name}» ساخته شد`);
+        e.target.reset();
+      });
 
     board?.addEventListener("click", (e) => {
       const card = e.target.closest(".project-card");
@@ -147,7 +157,9 @@
     document.querySelectorAll("[data-role]").forEach((select) => {
       select.addEventListener("change", () => {
         const name = select.closest("[data-member]")?.dataset.member || "عضو";
-        HarborToast(`نقش ${name} به «${select.options[select.selectedIndex].text}» تغییر کرد`);
+        HarborToast(
+          `نقش ${name} به «${select.options[select.selectedIndex].text}» تغییر کرد`,
+        );
       });
     });
 
@@ -184,7 +196,9 @@
     document.querySelectorAll(".plan-card").forEach((card) => {
       card.addEventListener("click", (e) => {
         if (e.target.closest("button")) return;
-        document.querySelectorAll(".plan-card").forEach((c) => c.classList.remove("is-selected"));
+        document
+          .querySelectorAll(".plan-card")
+          .forEach((c) => c.classList.remove("is-selected"));
         card.classList.add("is-selected");
         HarborToast(`پلن «${card.dataset.plan}» انتخاب شد`);
       });
@@ -195,7 +209,9 @@
         e.stopPropagation();
         const card = btn.closest(".plan-card");
         if (!card) return;
-        document.querySelectorAll(".plan-card").forEach((c) => c.classList.remove("is-selected"));
+        document
+          .querySelectorAll(".plan-card")
+          .forEach((c) => c.classList.remove("is-selected"));
         card.classList.add("is-selected");
         if (!btn.hasAttribute("data-pay")) {
           HarborToast(`پلن «${card.dataset.plan}» انتخاب شد`);
@@ -252,7 +268,9 @@
 
     document.querySelectorAll("[data-tab]").forEach((tab) => {
       tab.addEventListener("click", () => {
-        document.querySelectorAll("[data-tab]").forEach((t) => t.classList.remove("is-active"));
+        document
+          .querySelectorAll("[data-tab]")
+          .forEach((t) => t.classList.remove("is-active"));
         tab.classList.add("is-active");
         document.querySelectorAll("[data-panel]").forEach((p) => {
           p.classList.toggle("hidden", p.dataset.panel !== tab.dataset.tab);

@@ -123,7 +123,7 @@ export default function DashboardPage() {
 
               <div className="relative min-w-0 flex-1 max-w-xl">
                 <svg
-                  className="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-ink-400"
+                  className="pointer-events-none absolute start-3 top-2/3 -translate-y-1/2 text-ink-400"
                   width="16"
                   height="16"
                   viewBox="0 0 24 24"

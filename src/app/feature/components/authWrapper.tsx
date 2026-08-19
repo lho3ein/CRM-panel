@@ -49,10 +49,7 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
                 className="auth-reveal relative z-10"
                 style={{ "--d": "0.05s" } as React.CSSProperties}
               >
-                <a
-                  href="./index.html"
-                  className="inline-flex items-center gap-3"
-                >
+                <a href="./auth" className="inline-flex items-center gap-3">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/15 text-white ring-1 ring-white/25 backdrop-blur">
                     <svg
                       width="22"

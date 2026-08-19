@@ -25,10 +25,7 @@ export default function SettingsPage() {
           className="fixed inset-y-0 start-0 z-40 flex w-[272px] translate-x-full flex-col border-e border-white/60 bg-white/80 px-4 py-5 shadow-soft backdrop-blur-xl transition-transform duration-500 ease-out lg:static lg:translate-x-0"
         >
           <div className="mb-8 flex items-center justify-between px-2">
-            <a
-              href="./dashboard.html"
-              className="group flex items-center gap-3"
-            >
+            <a href="./dashboard" className="group flex items-center gap-3">
               <span className="brand-mark relative grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-harbor-600 text-white shadow-lg shadow-harbor-600/30">
                 <svg
                   width="22"
@@ -89,7 +86,7 @@ export default function SettingsPage() {
               تحلیل پیشرفته و پشتیبانی اولویت‌دار.
             </p>
             <a
-              href="./billing.html"
+              href="./billing"
               className="btn-primary magnetic mt-3 w-full text-xs"
             >
               مشاهده پلن‌ها
@@ -121,7 +118,7 @@ export default function SettingsPage() {
               </button>
               <div className="relative min-w-0 flex-1 max-w-xl">
                 <svg
-                  className="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-ink-400"
+                  className="pointer-events-none absolute start-3 top-2/3 -translate-y-1/2 text-ink-400"
                   width="16"
                   height="16"
                   viewBox="0 0 24 24"
@@ -208,7 +205,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
                 <a
-                  href="./settings.html"
+                  href="./settings"
                   className="hidden items-center gap-3 rounded-2xl border border-ink-200/70 bg-white/80 py-1.5 pe-3 ps-1.5 sm:flex"
                 >
                   <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-harbor-500 to-harbor-700 text-xs font-bold text-white">
@@ -568,7 +565,7 @@ export default function SettingsPage() {
                       خروج از همه دستگاه‌ها
                     </button>
                     <a
-                      href="./index.html"
+                      href="./auth"
                       className="btn-ghost text-xs text-ember-700"
                     >
                       خروج از حساب

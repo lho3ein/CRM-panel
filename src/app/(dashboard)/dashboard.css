@@ -1,7 +1,7 @@
 /* Harbor dashboard motion & polish — local only */
 
 .reveal {
-  /* opacity: 0; */
+  opacity: 0;
   transform: translateY(22px);
   transition:
     opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
@@ -218,10 +218,10 @@
 }
 
 /* ---------- Page transition ---------- */
-/* html {
+html {
   opacity: 0;
   transition: opacity 0.35s ease;
-} */
+}
 
 html.page-ready {
   opacity: 1;

@@ -3,12 +3,26 @@
 
   const chartData = {
     "7d": [32, 40, 36, 48, 52, 45, 58],
-    "30d": [28, 30, 34, 33, 38, 42, 40, 45, 48, 46, 50, 55, 52, 58, 60, 57, 62, 65, 63, 68, 70, 66, 72, 75, 73, 78, 80, 76, 82, 85],
-    "90d": [20, 24, 22, 28, 30, 27, 35, 38, 36, 42, 40, 45, 48, 46, 50, 55, 52, 58, 60, 62, 58, 65, 68, 66, 70, 74, 72, 78, 80, 76],
+    "30d": [
+      28, 30, 34, 33, 38, 42, 40, 45, 48, 46, 50, 55, 52, 58, 60, 57, 62, 65,
+      63, 68, 70, 66, 72, 75, 73, 78, 80, 76, 82, 85,
+    ],
+    "90d": [
+      20, 24, 22, 28, 30, 27, 35, 38, 36, 42, 40, 45, 48, 46, 50, 55, 52, 58,
+      60, 62, 58, 65, 68, 66, 70, 74, 72, 78, 80, 76,
+    ],
   };
 
   const dayLabels = {
-    "7d": ["دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه", "یکشنبه"],
+    "7d": [
+      "دوشنبه",
+      "سه‌شنبه",
+      "چهارشنبه",
+      "پنجشنبه",
+      "جمعه",
+      "شنبه",
+      "یکشنبه",
+    ],
   };
 
   const activities = [
@@ -102,7 +116,7 @@
           <p class="truncate text-sm font-semibold text-ink-900">${a.title}</p>
           <p class="truncate text-xs text-ink-400">${a.meta}</p>
         </div>
-      </li>`
+      </li>`,
       )
       .join("");
   }
@@ -129,7 +143,7 @@
           </div>
         </td>
         <td class="px-5 py-4 text-ink-500 sm:px-6">${p.due}</td>
-      </tr>`
+      </tr>`,
       )
       .join("");
 
@@ -151,7 +165,7 @@
       <li class="focus-item ${item.done ? "done" : ""}" data-id="${item.id}">
         <span class="focus-check">${item.done ? "✓" : ""}</span>
         <span class="text-sm font-medium text-ink-800 ${item.done ? "line-through" : ""}">${item.text}</span>
-      </li>`
+      </li>`,
       )
       .join("");
   }
@@ -162,7 +176,9 @@
     const row = e.target.closest(".focus-item");
     if (!row) return;
     const id = Number(row.dataset.id);
-    focusState = focusState.map((f) => (f.id === id ? { ...f, done: !f.done } : f));
+    focusState = focusState.map((f) =>
+      f.id === id ? { ...f, done: !f.done } : f,
+    );
     renderFocus();
     const item = focusState.find((f) => f.id === id);
     if (item && window.HarborToast) {
@@ -176,7 +192,8 @@
     goalRing.style.strokeDasharray = String(circumference);
     goalRing.style.strokeDashoffset = String(circumference);
     requestAnimationFrame(() => {
-      goalRing.style.transition = "stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1)";
+      goalRing.style.transition =
+        "stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1)";
       goalRing.style.strokeDashoffset = String(circumference * (1 - 0.8));
     });
   }
@@ -248,14 +265,16 @@
     chartDots.innerHTML = points
       .map(
         (p, i) =>
-          `<circle class="chart-dot" cx="${p.x}" cy="${p.y}" r="4.5" fill="#fff" stroke="#1a7a6d" stroke-width="2.5" data-value="${p.v}" data-index="${i}" style="animation-delay:${0.55 + i * 0.05}s"></circle>`
+          `<circle class="chart-dot" cx="${p.x}" cy="${p.y}" r="4.5" fill="#fff" stroke="#1a7a6d" stroke-width="2.5" data-value="${p.v}" data-index="${i}" style="animation-delay:${0.55 + i * 0.05}s"></circle>`,
       )
       .join("");
 
     requestAnimationFrame(() => {
       linePath.classList.add("is-drawn");
       areaPath.classList.add("is-drawn");
-      chartDots.querySelectorAll(".chart-dot").forEach((d) => d.classList.add("is-shown"));
+      chartDots
+        .querySelectorAll(".chart-dot")
+        .forEach((d) => d.classList.add("is-shown"));
     });
 
     chartDots.querySelectorAll(".chart-dot").forEach((dot) => {
@@ -266,9 +285,12 @@
           range === "7d"
             ? dayLabels["7d"][idx] || `روز ${(idx + 1).toLocaleString("fa-IR")}`
             : `نقطه ${(idx + 1).toLocaleString("fa-IR")}`;
-        tooltip.textContent = `${label} · ${Number(value).toLocaleString("fa-IR", {
-          maximumFractionDigits: 1,
-        })} میلیون تومان`;
+        tooltip.textContent = `${label} · ${Number(value).toLocaleString(
+          "fa-IR",
+          {
+            maximumFractionDigits: 1,
+          },
+        )} میلیون تومان`;
         tooltip.classList.remove("hidden");
         const rect = chartSvg.getBoundingClientRect();
         const cx = (Number(e.target.getAttribute("cx")) / 640) * rect.width;
@@ -286,18 +308,23 @@
 
   document.querySelectorAll(".range-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll(".range-btn").forEach((b) => b.classList.remove("active"));
+      document
+        .querySelectorAll(".range-btn")
+        .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       currentRange = btn.dataset.range;
       renderChart(currentRange);
-      if (window.HarborToast) HarborToast(`بازه ${btn.textContent.trim()} انتخاب شد`);
+      if (window.HarborToast)
+        HarborToast(`بازه ${btn.textContent.trim()} انتخاب شد`);
     });
   });
 
   renderChart(currentRange);
 
-  document.querySelector(".btn-ghost.text-xs")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.href = "./projects.html";
-  });
+  document
+    .querySelector(".btn-ghost.text-xs")
+    ?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "./projects";
+    });
 })();
