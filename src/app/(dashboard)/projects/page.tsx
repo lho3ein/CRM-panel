@@ -174,7 +174,7 @@ export default function ProjectPage() {
                 <div className="space-y-3" data-list>
                   <article className="kanban-card rounded-xl border border-ink-100 bg-white p-3 shadow-soft">
                     <p className="text-sm font-semibold">نوشتن متن صفحه قیمت</p>
-                    <p className="mt-1 text-xs text-ink-400">سارا</p>
+                    <p className="mt-1 text-xs text-ink-400">حسین</p>
                   </article>
                   <article className="kanban-card rounded-xl border border-ink-100 bg-white p-3 shadow-soft">
                     <p className="text-sm font-semibold">آیکون‌های موبایل</p>
@@ -206,7 +206,7 @@ export default function ProjectPage() {
                 <div className="space-y-3" data-list>
                   <article className="kanban-card rounded-xl border border-ink-100 bg-white p-3 shadow-soft">
                     <p className="text-sm font-semibold">چیدمان داشبورد</p>
-                    <p className="mt-1 text-xs text-ink-400">سارا</p>
+                    <p className="mt-1 text-xs text-ink-400">حسین</p>
                   </article>
                 </div>
               </div>

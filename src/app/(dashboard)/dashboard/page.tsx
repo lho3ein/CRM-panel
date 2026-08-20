@@ -33,7 +33,7 @@ export default function DashboardPage() {
             <section className="reveal mb-7 flex flex-col gap-4 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="mb-2 text-xs font-semibold text-harbor-600">
-                  عصر بخیر، سارا
+                  عصر بخیر، حسین
                 </p>
                 <h1 className="text-3xl font-bold tracking-tight text-ink-950 sm:text-4xl">
                   نگاهی سریع به فضای کاری شما
