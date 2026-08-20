@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export const NavBar = () => {
@@ -119,7 +120,7 @@ export const NavBar = () => {
               id="logoutBtn"
               className="hidden rounded-xl border border-ink-200/70 bg-white px-3 py-2 text-xs font-bold text-ink-600 hover:border-ember-300 hover:text-ember-700 sm:inline-flex"
             >
-              خروج
+              <Link href="./auth">خروج</Link>
             </button>
           </div>
         </div>

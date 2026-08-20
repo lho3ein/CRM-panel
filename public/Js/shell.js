@@ -251,10 +251,4 @@
   });
 
   /* ---------- Logout ---------- */
-  document.getElementById("logoutBtn")?.addEventListener("click", () => {
-    HarborToast("در حال خروج…");
-    setTimeout(() => {
-      window.location.href = "./auth";
-    }, 600);
-  });
 })();

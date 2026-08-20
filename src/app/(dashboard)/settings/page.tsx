@@ -31,11 +31,11 @@ export default function SettingsPage() {
         aria-hidden="true"
       ></div>
       <div
-        className="pointer-events-none fixed -end-24 top-10 h-72 w-72 animate-orb-a rounded-full bg-harbor-300/30 blur-3xl"
+        className="pointer-events-none fixed -inset-e-24 top-10 h-72 w-72 animate-orb-a rounded-full bg-harbor-300/30 blur-3xl"
         aria-hidden="true"
       ></div>
       <div
-        className="pointer-events-none fixed -start-16 bottom-10 h-80 w-80 animate-orb-b rounded-full bg-ember-300/25 blur-3xl"
+        className="pointer-events-none fixed -inset-s-16 bottom-10 h-80 w-80 animate-orb-b rounded-full bg-ember-300/25 blur-3xl"
         aria-hidden="true"
       ></div>
 
@@ -171,7 +171,7 @@ export default function SettingsPage() {
                       </label>
                       <textarea
                         id="setBio"
-                        className="field-input min-h-[96px] resize-none"
+                        className="field-input min-h-24 resize-none"
                         rows={3}
                         placeholder="یک معرفی کوتاه از خودتان بنویسید"
                         value={bio}

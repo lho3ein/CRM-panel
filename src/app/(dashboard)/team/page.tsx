@@ -13,11 +13,11 @@ export default function TeamPage() {
         aria-hidden="true"
       ></div>
       <div
-        className="pointer-events-none fixed -end-24 top-10 h-72 w-72 animate-orb-a rounded-full bg-harbor-300/30 blur-3xl"
+        className="pointer-events-none fixed -inset-e-24 top-10 h-72 w-72 animate-orb-a rounded-full bg-harbor-300/30 blur-3xl"
         aria-hidden="true"
       ></div>
       <div
-        className="pointer-events-none fixed -start-16 bottom-10 h-80 w-80 animate-orb-b rounded-full bg-ember-300/25 blur-3xl"
+        className="pointer-events-none fixed -inset-s-16 bottom-10 h-80 w-80 animate-orb-b rounded-full bg-ember-300/25 blur-3xl"
         aria-hidden="true"
       ></div>
 
@@ -51,9 +51,9 @@ export default function TeamPage() {
                 data-member="حسین خلیلی"
               >
                 <div className="flex items-start gap-3">
-                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-harbor-500 to-harbor-700 text-sm font-bold text-white">
+                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-harbor-500 to-harbor-700 text-sm font-bold text-white">
                     سم
-                    <span className="absolute -bottom-0.5 -end-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
+                    <span className="absolute -bottom-0.5 -inset-e-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-ink-950">حسین خلیلی</p>
@@ -87,9 +87,9 @@ export default function TeamPage() {
                 data-member="نگین فولادوند"
               >
                 <div className="flex items-start gap-3">
-                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-ember-400 to-ember-600 text-sm font-bold text-white">
+                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-ember-400 to-ember-600 text-sm font-bold text-white">
                     ما
-                    <span className="absolute -bottom-0.5 -end-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
+                    <span className="absolute -bottom-0.5 -inset-e-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-ink-950">نگین فولادوند</p>
@@ -123,9 +123,9 @@ export default function TeamPage() {
                 data-member="سامان کریمی"
               >
                 <div className="flex items-start gap-3">
-                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-ink-500 to-ink-700 text-sm font-bold text-white">
+                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-ink-500 to-ink-700 text-sm font-bold text-white">
                     سا
-                    <span className="absolute -bottom-0.5 -end-0.5 h-3 w-3 rounded-full bg-ink-300 ring-2 ring-white"></span>
+                    <span className="absolute -bottom-0.5 -inset-e-0.5 h-3 w-3 rounded-full bg-ink-300 ring-2 ring-white"></span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-ink-950">سامان کریمی</p>
@@ -159,9 +159,9 @@ export default function TeamPage() {
                 data-member="نیلوفر رضایی"
               >
                 <div className="flex items-start gap-3">
-                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-harbor-400 to-ember-500 text-sm font-bold text-white">
+                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-harbor-400 to-ember-500 text-sm font-bold text-white">
                     نر
-                    <span className="absolute -bottom-0.5 -end-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
+                    <span className="absolute -bottom-0.5 -inset-e-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-ink-950">نیلوفر رضایی</p>
@@ -195,9 +195,9 @@ export default function TeamPage() {
                 data-member="پارسا موسوی"
               >
                 <div className="flex items-start gap-3">
-                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-harbor-600 to-ink-700 text-sm font-bold text-white">
+                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-harbor-600 to-ink-700 text-sm font-bold text-white">
                     پم
-                    <span className="absolute -bottom-0.5 -end-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
+                    <span className="absolute -bottom-0.5 -inset-e-0.5 h-3 w-3 rounded-full bg-harbor-500 ring-2 ring-white"></span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-ink-950">پارسا موسوی</p>
@@ -231,9 +231,9 @@ export default function TeamPage() {
                 data-member="هستی اکبری"
               >
                 <div className="flex items-start gap-3">
-                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-ember-500 to-harbor-600 text-sm font-bold text-white">
+                  <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-ember-500 to-harbor-600 text-sm font-bold text-white">
                     ها
-                    <span className="absolute -bottom-0.5 -end-0.5 h-3 w-3 rounded-full bg-ink-300 ring-2 ring-white"></span>
+                    <span className="absolute -bottom-0.5 -inset-e-0.5 h-3 w-3 rounded-full bg-ink-300 ring-2 ring-white"></span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-ink-950">هستی اکبری</p>
