@@ -75,7 +75,7 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
                   </span>
                   <span>
                     <span className="block text-2xl font-bold tracking-tight">
-                      لنگر
+                      پنل
                     </span>
                     <span className="text-xs text-white/70">
                       فضای کاری آرام برای تیم‌های جدی
@@ -89,7 +89,7 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
                 style={{ "--d": "0.18s" } as React.CSSProperties}
               >
                 <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-white/65">
-                  لنگر
+                  پنل
                 </p>
                 <h1 className="max-w-md text-4xl font-bold leading-tight tracking-tight xl:text-5xl">
                   جایی که تمرکز، جریان کار می‌شود
@@ -168,7 +168,7 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
                       <circle cx="12" cy="16" r="1.6" fill="currentColor" />
                     </svg>
                   </span>
-                  <span className="text-xl font-bold text-ink-950">لنگر</span>
+                  <span className="text-xl font-bold text-ink-950">پنل</span>
                 </a>
               </div>
 
@@ -197,7 +197,7 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
                 className="auth-reveal mt-8 text-center text-xs text-ink-400"
                 style={{ "--d": "0.35s" } as React.CSSProperties}
               >
-                با ادامه، تأیید می‌کنید که سیاست امنیت لنگر را خوانده‌اید.
+                با ادامه، تأیید می‌کنید که سیاست امنیت پنل را خوانده‌اید.
               </p>
             </section>
           </div>

@@ -9,7 +9,7 @@ export const LoginForm = () => {
             خوش آمدید
           </h2>
           <p className="mt-1.5 text-sm text-ink-500">
-            برای ادامه وارد حساب لنگر شوید.
+            برای ادامه وارد حساب پنل شوید.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export const LoginForm = () => {
           className="btn-primary relative w-full py-3"
           id="loginSubmit"
         >
-          <span className="btn-label">ورود به لنگر</span>
+          <span className="btn-label">ورود به پنل</span>
         </button>
 
         <p className="text-center text-sm text-ink-500">

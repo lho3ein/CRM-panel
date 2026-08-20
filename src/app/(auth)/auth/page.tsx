@@ -70,7 +70,7 @@ export default function LoginPage() {
                   </span>
                   <span>
                     <span className="block text-2xl font-bold tracking-tight">
-                      لنگر
+                      پنل
                     </span>
                     <span className="text-xs text-white/70">
                       فضای کاری آرام برای تیم‌های جدی
@@ -84,7 +84,7 @@ export default function LoginPage() {
                 style={{ "--d": "0.18s" } as React.CSSProperties}
               >
                 <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-white/65">
-                  لنگر
+                  پنل
                 </p>
                 <h1 className="max-w-md text-4xl font-bold leading-tight tracking-tight xl:text-5xl">
                   جایی که تمرکز، جریان کار می‌شود
@@ -163,7 +163,7 @@ export default function LoginPage() {
                       <circle cx="12" cy="16" r="1.6" fill="currentColor" />
                     </svg>
                   </span>
-                  <span className="text-xl font-bold text-ink-950">لنگر</span>
+                  <span className="text-xl font-bold text-ink-950">پنل</span>
                 </a>
               </div>
 
@@ -193,7 +193,7 @@ export default function LoginPage() {
                         خوش آمدید
                       </h2>
                       <p className="mt-1.5 text-sm text-ink-500">
-                        برای ادامه وارد حساب لنگر شوید.
+                        برای ادامه وارد حساب پنل شوید.
                       </p>
                     </div>
 
@@ -247,7 +247,6 @@ export default function LoginPage() {
                         className="field-input"
                         placeholder="ایمیل خود را وارد کنید"
                         autoComplete="email"
-                        dir="ltr"
                       />
                       <p
                         className="field-error hidden"
@@ -324,7 +323,7 @@ export default function LoginPage() {
                       className="btn-primary relative w-full py-3"
                       id="loginSubmit"
                     >
-                      <span className="btn-label">ورود به لنگر</span>
+                      <span className="btn-label">ورود به پنل</span>
                     </button>
 
                     <p className="text-center text-sm text-ink-500">
@@ -364,7 +363,7 @@ export default function LoginPage() {
                           name="name"
                           type="text"
                           className="field-input"
-                          placeholder="مثلاً سارا محمدی"
+                          placeholder="مثلاً حسین خلیلی"
                           autoComplete="name"
                         />
                         <p
@@ -398,7 +397,6 @@ export default function LoginPage() {
                         className="field-input"
                         placeholder="ایمیل کاری خود را وارد کنید"
                         autoComplete="email"
-                        dir="ltr"
                       />
                       <p
                         className="field-error hidden"
@@ -518,7 +516,7 @@ export default function LoginPage() {
                 className="auth-reveal mt-8 text-center text-xs text-ink-400"
                 style={{ "--d": "0.35s" } as React.CSSProperties}
               >
-                با ادامه، تأیید می‌کنید که سیاست امنیت لنگر را خوانده‌اید.
+                با ادامه، تأیید می‌کنید که سیاست امنیت پنل را خوانده‌اید.
               </p>
             </section>
           </div>

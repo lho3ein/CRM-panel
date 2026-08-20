@@ -23,7 +23,7 @@ export const SignupForm = () => {
               name="name"
               type="text"
               className="field-input"
-              placeholder="مثلاً سارا محمدی"
+              placeholder="مثلاً حسین خلیلی"
               autoComplete="name"
             />
             <p

@@ -5,44 +5,44 @@
 
   const NAV = [
     {
-      id: "dashboard",
+      id: "/dashboard",
       href: "./dashboard",
       label: "نمای کلی",
       icon: `<path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>`,
     },
     {
-      id: "analytics",
+      id: "/analytics",
       href: "./analytics",
       label: "تحلیل‌ها",
       icon: `<path d="M4 19V5M4 19h16M8 15l3-3 2.5 2.5L18 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>`,
     },
     {
-      id: "projects",
+      id: "/projects",
       href: "./projects",
       label: "پروژه‌ها",
       icon: `<path d="M8 7h12M8 12h12M8 17h8M4 7h.01M4 12h.01M4 17h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
     },
     {
-      id: "team",
+      id: "/team",
       href: "./team",
       label: "تیم",
       icon: `<path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="9.5" cy="7.5" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M19 8v6M16 11h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
     },
     {
-      id: "billing",
+      id: "/billing",
       href: "./billing",
       label: "صورتحساب",
       icon: `<rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 13h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
     },
     {
-      id: "settings",
+      id: "/settings",
       href: "./settings",
       label: "تنظیمات",
       icon: `<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
     },
   ];
 
-  const pageId = document.body.dataset.page || "dashboard";
+  const pageId = window.location.pathname || "dashboard";
   const navMount = document.querySelector("[data-shell-nav]");
   if (navMount) {
     navMount.innerHTML = NAV.map(

@@ -1,6 +1,26 @@
+"use client";
+import { NavBar } from "@/components/navBar";
+import { SideBar } from "@/components/sideBar";
 import Script from "next/script";
+import { useState } from "react";
+type stateActive = "profile" | "notify" | "security";
 
 export default function SettingsPage() {
+  const [activeSection, setActiveSection] = useState<stateActive>("profile");
+
+  // ------------------------------------------profile state
+  const [name, setName] = useState("حسین خلیلی");
+  const [teamName, setTeamName] = useState("استودیو تست");
+  const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("طراح محصول و مدیر استودیو تست");
+  // -------------------------------------------notify state
+  const [emailToggle, setEmailToggle] = useState(true);
+  const [browserToggle, setBrowserToggle] = useState(false);
+  const [reminderToggle, setReminderToggle] = useState(true);
+  const [factorToggle, setFactorToggle] = useState(true);
+  // --------------------------------------------security state
+  const [twoFactorToggle, setTwoFactorToggle] = useState(false);
+
   return (
     <div
       data-page="settings"
@@ -20,213 +40,11 @@ export default function SettingsPage() {
       ></div>
 
       <div className="relative z-10 flex min-h-screen">
-        <aside
-          id="sidebar"
-          className="fixed inset-y-0 start-0 z-40 flex w-[272px] translate-x-full flex-col border-e border-white/60 bg-white/80 px-4 py-5 shadow-soft backdrop-blur-xl transition-transform duration-500 ease-out lg:static lg:translate-x-0"
-        >
-          <div className="mb-8 flex items-center justify-between px-2">
-            <a href="./dashboard" className="group flex items-center gap-3">
-              <span className="brand-mark relative grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-harbor-600 text-white shadow-lg shadow-harbor-600/30">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 14c2.5-1.5 4.5-5 8-5s5.5 3.5 8 5"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M12 9V5M8.5 19h7"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="12" cy="16" r="1.6" fill="currentColor" />
-                </svg>
-              </span>
-              <span>
-                <span className="block text-xl font-bold tracking-tight text-ink-950">
-                  لنگر
-                </span>
-                <span className="text-[11px] font-medium text-ink-400">
-                  فضای کاری
-                </span>
-              </span>
-            </a>
-            <button
-              id="closeSidebar"
-              className="grid h-9 w-9 place-items-center rounded-lg text-ink-500 transition hover:bg-ink-100 lg:hidden"
-              aria-label="بستن منو"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M6 6l12 12M18 6L6 18"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-          </div>
-          <nav
-            className="flex flex-1 flex-col gap-1"
-            data-shell-nav
-            aria-label="منوی اصلی"
-          ></nav>
-          <div className="mt-4 overflow-hidden rounded-2xl border border-harbor-100 bg-gradient-to-br from-harbor-50 to-ember-50 p-4">
-            <p className="text-sm font-bold text-ink-900">
-              ارتقا به لنگر حرفه‌ای
-            </p>
-            <p className="mt-1 text-xs leading-relaxed text-ink-500">
-              تحلیل پیشرفته و پشتیبانی اولویت‌دار.
-            </p>
-            <a
-              href="./billing"
-              className="btn-primary magnetic mt-3 w-full text-xs"
-            >
-              مشاهده پلن‌ها
-            </a>
-          </div>
-        </aside>
+        <SideBar />
 
-        <div
-          id="sidebarOverlay"
-          className="fixed inset-0 z-30 hidden bg-ink-950/30 backdrop-blur-sm lg:hidden"
-        ></div>
+        <div className="flex min-w-0 flex-1 flex-col lg:mr-68">
+          <NavBar />
 
-        <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-20 border-b border-white/50 bg-white/65 px-4 py-3 backdrop-blur-xl sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3">
-              <button
-                id="openSidebar"
-                className="grid h-10 w-10 place-items-center rounded-xl border border-ink-200/70 bg-white text-ink-600 transition hover:border-harbor-300 hover:text-harbor-700 lg:hidden"
-                aria-label="باز کردن منو"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M4 7h16M4 12h16M4 17h10"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-              <div className="relative min-w-0 flex-1 max-w-xl">
-                <svg
-                  className="pointer-events-none absolute start-3 top-2/3 -translate-y-1/2 text-ink-400"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="7"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                  />
-                  <path
-                    d="m20 20-3.5-3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <input
-                  type="search"
-                  placeholder="جستجو در لنگر…"
-                  className="w-full rounded-xl border border-ink-200/70 bg-white/80 py-2.5 ps-10 pe-4 text-sm text-ink-800 outline-none transition placeholder:text-ink-400 focus:border-harbor-400 focus:shadow-glow"
-                />
-              </div>
-              <div className="relative ms-auto flex items-center gap-2 sm:gap-3">
-                <button
-                  id="notifBtn"
-                  className="relative grid h-10 w-10 place-items-center rounded-xl border border-ink-200/70 bg-white text-ink-600 transition hover:border-harbor-300 hover:text-harbor-700"
-                  aria-label="اعلان‌ها"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M6 17h12l-1.2-1.8a5.8 5.8 0 0 1-.9-3.1V10a3.9 3.9 0 1 0-7.8 0v2.1c0 1.1-.3 2.2-.9 3.1L6 17Z"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M10 19a2 2 0 0 0 4 0"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  <span className="absolute end-2 top-2 h-2 w-2 rounded-full bg-ember-500 ring-2 ring-white"></span>
-                </button>
-                <div id="notifPanel" className="notif-panel">
-                  <div className="border-b border-ink-100 px-4 py-3">
-                    <p className="text-sm font-bold text-ink-900">اعلان‌ها</p>
-                  </div>
-                  <div className="notif-item">
-                    <span className="grid h-9 w-9 place-items-center rounded-xl bg-harbor-100 text-xs font-bold text-harbor-700">
-                      م
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-ink-900">
-                        مریم فایل جدید گذاشت
-                      </p>
-                      <p className="text-xs text-ink-400">۲ دقیقه پیش</p>
-                    </div>
-                  </div>
-                  <div className="notif-item">
-                    <span className="grid h-9 w-9 place-items-center rounded-xl bg-ember-100 text-xs font-bold text-ember-700">
-                      ف
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-ink-900">
-                        فاکتور پرداخت شد
-                      </p>
-                      <p className="text-xs text-ink-400">۱۸ دقیقه پیش</p>
-                    </div>
-                  </div>
-                  <div className="notif-item">
-                    <span className="grid h-9 w-9 place-items-center rounded-xl bg-ink-100 text-xs font-bold text-ink-700">
-                      س
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-ink-900">
-                        سامان به تیم پیوست
-                      </p>
-                      <p className="text-xs text-ink-400">۱ ساعت پیش</p>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="./settings"
-                  className="hidden items-center gap-3 rounded-2xl border border-ink-200/70 bg-white/80 py-1.5 pe-3 ps-1.5 sm:flex"
-                >
-                  <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-harbor-500 to-harbor-700 text-xs font-bold text-white">
-                    سم
-                  </span>
-                  <div className="leading-tight">
-                    <p className="text-sm font-semibold text-ink-900">
-                      سارا محمدی
-                    </p>
-                    <p className="text-[11px] text-ink-400">مدیر</p>
-                  </div>
-                </a>
-                <button
-                  id="logoutBtn"
-                  className="hidden rounded-xl border border-ink-200/70 bg-white px-3 py-2 text-xs font-bold text-ink-600 hover:border-ember-300 hover:text-ember-700 sm:inline-flex"
-                >
-                  خروج
-                </button>
-              </div>
-            </div>
-          </header>
           <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
             <section className="reveal mb-7">
               <p className="mb-2 text-xs font-semibold text-harbor-600">
@@ -245,9 +63,10 @@ export default function SettingsPage() {
               style={{ "--d": "0.1s" } as React.CSSProperties}
             >
               <aside className="settings-nav glass-panel rounded-3xl p-3 shadow-soft">
+                {/* btn profile */}
                 <button
-                  data-tab="profile"
-                  className="settings-nav__item is-active"
+                  onClick={() => setActiveSection("profile")}
+                  className={`settings-nav__item ${activeSection === "profile" && "is-active"}`}
                 >
                   <span className="settings-nav__icon">پ</span>
                   <span>
@@ -257,7 +76,12 @@ export default function SettingsPage() {
                     </span>
                   </span>
                 </button>
-                <button data-tab="notify" className="settings-nav__item">
+
+                {/* btn notify */}
+                <button
+                  onClick={() => setActiveSection("notify")}
+                  className={`settings-nav__item ${activeSection === "notify" && "is-active"}`}
+                >
                   <span className="settings-nav__icon">ا</span>
                   <span>
                     <span className="block text-sm font-bold">اعلان‌ها</span>
@@ -266,7 +90,12 @@ export default function SettingsPage() {
                     </span>
                   </span>
                 </button>
-                <button data-tab="security" className="settings-nav__item">
+
+                {/* btn security */}
+                <button
+                  onClick={() => setActiveSection("security")}
+                  className={`settings-nav__item ${activeSection === "security" && "is-active"}`}
+                >
                   <span className="settings-nav__icon">س</span>
                   <span>
                     <span className="block text-sm font-bold">امنیت</span>
@@ -278,9 +107,9 @@ export default function SettingsPage() {
               </aside>
 
               <div className="min-w-0">
+                {/* profile */}
                 <section
-                  data-panel="profile"
-                  className="glass-panel spotlight rounded-3xl p-5 shadow-soft sm:p-7"
+                  className={`${activeSection == "profile" ? "block" : "hidden"} glass-panel spotlight rounded-3xl p-5 shadow-soft sm:p-7`}
                 >
                   <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
                     <div className="avatar-upload">
@@ -295,11 +124,9 @@ export default function SettingsPage() {
                     </div>
                     <div>
                       <h2 className="text-xl font-bold text-ink-950">
-                        سارا محمدی
+                        حسین خلیلی
                       </h2>
-                      <p className="text-sm text-ink-500">
-                        مدیر · استودیو لنگر
-                      </p>
+                      <p className="text-sm text-ink-500">مدیر · استودیو تست</p>
                     </div>
                   </div>
                   <form id="settingsForm" className="grid gap-4 sm:grid-cols-2">
@@ -310,7 +137,8 @@ export default function SettingsPage() {
                       <input
                         id="setName"
                         className="field-input"
-                        value="سارا محمدی"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="sm:col-span-1">
@@ -320,7 +148,8 @@ export default function SettingsPage() {
                       <input
                         id="setTeam"
                         className="field-input"
-                        value="استودیو لنگر"
+                        value={teamName}
+                        onChange={(e) => setTeamName(e.target.value)}
                       />
                     </div>
                     <div className="sm:col-span-2">
@@ -332,7 +161,8 @@ export default function SettingsPage() {
                         className="field-input"
                         type="email"
                         placeholder="ایمیل کاری خود را وارد کنید"
-                        dir="ltr"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="sm:col-span-2">
@@ -344,9 +174,9 @@ export default function SettingsPage() {
                         className="field-input min-h-[96px] resize-none"
                         rows={3}
                         placeholder="یک معرفی کوتاه از خودتان بنویسید"
-                      >
-                        طراح محصول و مدیر استودیو لنگر
-                      </textarea>
+                        value={bio}
+                        onChange={(e) => setBio(e.target.value)}
+                      ></textarea>
                     </div>
                     <div className="sm:col-span-2 flex flex-wrap gap-2 pt-1">
                       <button
@@ -367,9 +197,9 @@ export default function SettingsPage() {
                   </form>
                 </section>
 
+                {/* notify */}
                 <section
-                  data-panel="notify"
-                  className="glass-panel hidden rounded-3xl p-5 shadow-soft sm:p-7"
+                  className={`${activeSection == "notify" ? "block" : "hidden"} glass-panel rounded-3xl p-5 shadow-soft sm:p-7`}
                 >
                   <h2 className="text-xl font-bold text-ink-950">
                     ترجیحات اعلان
@@ -391,10 +221,9 @@ export default function SettingsPage() {
                         </p>
                       </div>
                       <button
-                        className="toggle-switch is-on"
+                        className={`toggle-switch ${emailToggle && "is-on"}`}
                         data-label="اعلان ایمیلی"
-                        role="switch"
-                        aria-checked="true"
+                        onClick={() => setEmailToggle(!emailToggle)}
                       ></button>
                     </div>
                     <div className="settings-row">
@@ -410,10 +239,9 @@ export default function SettingsPage() {
                         </p>
                       </div>
                       <button
-                        className="toggle-switch"
+                        className={`toggle-switch ${browserToggle && "is-on"}`}
                         data-label="اعلان مرورگر"
-                        role="switch"
-                        aria-checked="false"
+                        onClick={() => setBrowserToggle(!browserToggle)}
                       ></button>
                     </div>
                     <div className="settings-row">
@@ -429,10 +257,9 @@ export default function SettingsPage() {
                         </p>
                       </div>
                       <button
-                        className="toggle-switch is-on"
+                        className={`toggle-switch ${reminderToggle && "is-on"}`}
                         data-label="یادآور موعد"
-                        role="switch"
-                        aria-checked="true"
+                        onClick={() => setReminderToggle(!reminderToggle)}
                       ></button>
                     </div>
                     <div className="settings-row">
@@ -448,18 +275,17 @@ export default function SettingsPage() {
                         </p>
                       </div>
                       <button
-                        className="toggle-switch is-on"
+                        className={`toggle-switch ${factorToggle && "is-on"}`}
                         data-label="اعلان فاکتور"
-                        role="switch"
-                        aria-checked="true"
+                        onClick={() => setFactorToggle(!factorToggle)}
                       ></button>
                     </div>
                   </div>
                 </section>
 
+                {/* security */}
                 <section
-                  data-panel="security"
-                  className="glass-panel hidden rounded-3xl p-5 shadow-soft sm:p-7"
+                  className={`${activeSection == "security" ? "block" : "hidden"} glass-panel rounded-3xl p-5 shadow-soft sm:p-7`}
                 >
                   <h2 className="text-xl font-bold text-ink-950">امنیت حساب</h2>
                   <p className="mt-1 text-sm text-ink-500">
@@ -480,10 +306,9 @@ export default function SettingsPage() {
                         </p>
                       </div>
                       <button
-                        className="toggle-switch"
+                        className={`toggle-switch ${twoFactorToggle && "is-on"}`}
                         data-label="ورود دومرحله‌ای"
-                        role="switch"
-                        aria-checked="false"
+                        onClick={() => setTwoFactorToggle(!twoFactorToggle)}
                       ></button>
                     </div>
                   </div>
@@ -577,8 +402,7 @@ export default function SettingsPage() {
           </main>
         </div>
       </div>
-      <Script src="./js/shell.js" strategy="afterInteractive" />
-      <Script src="./js/pages.js" strategy="afterInteractive" />
+      <Script src="/Js/pages.js" strategy="afterInteractive" />
     </div>
   );
 }
