@@ -100,7 +100,7 @@ export default function DashboardPage() {
                 <p className="text-sm text-ink-500">درآمد ماهانه</p>
                 <p className="mt-1 text-3xl font-bold tracking-tight text-ink-950">
                   <span data-count="482">0</span>
-                  <span className="text-base font-semibold text-ink-500">
+                  <span className="text-base font-semibold text-ink-500 mr-1">
                     میلیون تومان
                   </span>
                 </p>

@@ -109,7 +109,7 @@ export const NavBar = () => {
               className="hidden items-center gap-3 rounded-2xl border border-ink-200/70 bg-white/80 py-1.5 pe-3 ps-1.5 sm:flex"
             >
               <span className="grid h-8 w-8 place-items-center rounded-xl bg-linear-to-br from-harbor-500 to-harbor-700 text-xs font-bold text-white">
-                سم
+                ح
               </span>
               <div className="leading-tight">
                 <p className="text-sm font-semibold text-ink-900">حسین خلیلی</p>
