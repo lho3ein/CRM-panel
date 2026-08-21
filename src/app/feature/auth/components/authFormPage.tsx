@@ -1,11 +1,8 @@
-import { SignupForm } from "@/app/feature/components/signupForm";
 import Script from "next/script";
 import { LoginForm } from "./loginForm";
-type authWrapperProps = {
-  children: React.ReactNode;
-  authMode: "login" | "signup";
-};
-export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
+import { SignUpForm } from "./signupForm";
+
+export const AuthFormPage = () => {
   return (
     <>
       <div className="mesh-bg relative min-h-screen overflow-x-hidden">
@@ -14,24 +11,24 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
           aria-hidden="true"
         ></div>
         <div
-          className="pointer-events-none fixed -end-20 top-0 h-72 w-72 animate-orb-a rounded-full bg-harbor-300/25 blur-3xl"
+          className="pointer-events-none fixed -inset-e-20 top-0 h-72 w-72 animate-orb-a rounded-full bg-harbor-300/25 blur-3xl"
           aria-hidden="true"
         ></div>
         <div
-          className="pointer-events-none fixed -start-16 bottom-0 h-80 w-80 animate-orb-b rounded-full bg-ember-300/20 blur-3xl"
+          className="pointer-events-none fixed -inset-s-16 bottom-0 h-80 w-80 animate-orb-b rounded-full bg-ember-300/20 blur-3xl"
           aria-hidden="true"
         ></div>
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl items-stretch p-4 sm:p-6 lg:p-8">
           <div className="grid w-full overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/55 shadow-soft backdrop-blur-xl lg:grid-cols-2">
             {/* Brand panel  */}
-            <section className="brand-panel relative hidden min-h-[540px] overflow-hidden p-8 text-white lg:flex lg:flex-col lg:justify-between xl:p-10">
+            <section className="brand-panel relative hidden min-h-135 overflow-hidden p-8 text-white lg:flex lg:flex-col lg:justify-between xl:p-10">
               <div
                 className="pointer-events-none absolute inset-0 opacity-40"
                 aria-hidden="true"
               >
-                <div className="absolute start-10 top-16 h-40 w-40 rounded-full bg-white/10 blur-2xl"></div>
-                <div className="absolute bottom-24 end-8 h-48 w-48 rounded-full bg-ember-400/30 blur-3xl"></div>
+                <div className="absolute inset-s-10 top-16 h-40 w-40 rounded-full bg-white/10 blur-2xl"></div>
+                <div className="absolute bottom-24 inset-e-8 h-48 w-48 rounded-full bg-ember-400/30 blur-3xl"></div>
               </div>
 
               <svg
@@ -181,15 +178,17 @@ export const AuthWrapper = ({ authMode, children }: authWrapperProps) => {
                   <button type="button" className="mode-tab" data-mode="login">
                     ورود
                   </button>
-
                   <button type="button" className="mode-tab" data-mode="signup">
                     ثبت‌نام
                   </button>
                 </div>
 
                 <div className="form-panel">
-                  {/* Login/signup form  */}
-                  {children}
+                  {/* Login  */}
+                  <LoginForm />
+
+                  {/* Signup */}
+                  <SignUpForm />
                 </div>
               </div>
 

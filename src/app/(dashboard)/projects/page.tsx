@@ -1,3 +1,4 @@
+"use client";
 import { NavBar } from "@/components/navBar";
 import { SideBar } from "@/components/sideBar";
 import Script from "next/script";

@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const page = document.body.dataset.page;
+  const page = document.querySelector("[data-page]")?.dataset.page;
 
   /* ===================== Analytics ===================== */
   if (page === "analytics") {
@@ -62,6 +62,11 @@
 
   /* ===================== Projects ===================== */
   if (page === "projects") {
+    console.log(
+      "filteeerrr",
+      document.querySelectorAll("[data-project-filter]").length,
+    );
+
     const board = document.getElementById("kanban");
     let dragEl = null;
 
@@ -242,6 +247,7 @@
   }
 
   /* ===================== Settings ===================== */
+  //-------------remove shavad code tabdil shode
   if (page === "settings") {
     document.querySelectorAll(".toggle-switch").forEach((tog) => {
       tog.addEventListener("click", () => {
@@ -251,6 +257,7 @@
         HarborToast(`${tog.dataset.label} ${on ? "فعال" : "غیرفعال"} شد`);
       });
     });
+    //------------------------
 
     document.getElementById("settingsForm")?.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -266,6 +273,7 @@
       }, 900);
     });
 
+    //-------------remove shavad code tabdil shode
     document.querySelectorAll("[data-tab]").forEach((tab) => {
       tab.addEventListener("click", () => {
         document
@@ -277,5 +285,6 @@
         });
       });
     });
+    //------------------------
   }
 })();
