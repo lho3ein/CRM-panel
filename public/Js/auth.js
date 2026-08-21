@@ -162,7 +162,7 @@
       setLoading(btn, false);
       showToast("ورود موفق — خوش آمدید!");
       setTimeout(() => {
-        window.location.href = "./dashboard";
+        window.location.href = "/dashboard";
       }, 700);
     }, 1100);
   });
@@ -223,7 +223,7 @@
       setLoading(btn, false);
       showToast("حساب ساخته شد — به داشبورد می‌روید.");
       setTimeout(() => {
-        window.location.href = "./dashboard";
+        window.location.href = "/dashboard";
       }, 800);
     }, 1300);
   });
