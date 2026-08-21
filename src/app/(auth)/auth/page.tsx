@@ -467,7 +467,7 @@ export default function LoginPage() {
 
                     <label className="check-row">
                       <input type="checkbox" id="acceptTerms" />
-                      <span>
+                      <span className="flex gap-1">
                         با
                         <a
                           href="#"
